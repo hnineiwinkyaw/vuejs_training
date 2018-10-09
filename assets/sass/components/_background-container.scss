@@ -1,0 +1,27 @@
+&.background-cover {
+  background-size: cover;
+  background-position: center;
+
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+
+  background-repeat: no-repeat;
+
+  height: 100%;
+  width: 100%;
+}
+
+&.background-cover-center-bottom {
+  background-size: cover;
+  background-position: center bottom;
+}
+
+&.primary-background-color {
+  @include primaryColor('bg')
+}
+
+&.secondary-background-color {
+  @include secondaryColor('bg')
+}

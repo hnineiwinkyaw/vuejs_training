@@ -1,0 +1,29 @@
+.icon-container {
+  width: 25px;
+  height: 25px;
+
+  &.primary-icon {
+    @include primaryColor('icon');
+  }
+  &.secondary-icon {
+    @include secondaryColor('icon');
+  }
+  &.theme-icon {
+    @include themeColor('icon');
+  }
+
+  &.icon-center {
+    margin: auto;
+    display: block;
+  }
+
+  &.icon-sm {
+    width: 18px;
+    height: 18px;
+  }
+
+  &.icon-xs {
+    width: 12px;
+    height: 12px;
+  }
+}

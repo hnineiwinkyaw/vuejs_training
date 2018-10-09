@@ -1,0 +1,9 @@
+div(:class="{ 'nav-md': !$root.isMenuCollapsed, 'nav-sm': $root.isMenuCollapsed }")
+  div.container.body
+    div.main_container
+      div.col-md-3.left_col
+        block sidebar
+      block top-navigation
+      div.right_col(role="main")
+        block content
+      block footer

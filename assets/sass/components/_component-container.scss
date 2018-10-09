@@ -1,0 +1,69 @@
+/*
+*   Sequence of content
+*   1) Common use
+*   2) Component use
+*   3) Page use
+*/
+
+/* Common use component styles starts here */
+&.non-fullscreen {
+  width: $defaut-component-width;
+  @include marginAuto();
+  @media (max-width: $screen-xs-max) {
+    width: $defaut-component-width-xs;
+  }
+}
+
+&.non-fullscreen--small {
+  width: $defaut-component-small-width;
+  @include marginAuto();
+  @media (max-width: $screen-xs-max) {
+    width: $defaut-component-small-width-xs;
+  }
+}
+
+&.non-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+&.non-margin-top {
+  margin-top: 0;
+}
+
+&.non-margin-bottom {
+  margin-bottom: 0;
+}
+
+&.margin-on-background {
+  @extend .non-margin;
+  @include headingGroup() {
+    padding-top: 0;
+  };
+  .background-container {
+    padding-top: $component-container-margin;
+    padding-bottom: $component-container-margin;
+
+    @media (max-width: $screen-xs-max) {
+      padding-top: $component-container-margin-xs;
+      padding-bottom: $component-container-margin-xs;
+    }
+  }
+}
+/* Common use component styles ends here */
+
+&.about-us {
+  width: 50%;
+  @media (max-width: $screen-xs-max) {
+    width: 100%;
+  }
+}
+
+&.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+}

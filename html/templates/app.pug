@@ -1,0 +1,16 @@
+extends ../layouts/default
+block variables
+  - var title = "Vuejs Training"
+block content
+  //- app shell
+  div.app-canvas#app
+    router-view
+    //- router-link to="/"
+
+append content-script
+  link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet")
+  link(href='./css/framework.css', type='text/css', rel='stylesheet')
+
+  script(src="./js/framework.bundle.js")
+  script(src="./js/app.bundle.js")
+  

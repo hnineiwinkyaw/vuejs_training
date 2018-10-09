@@ -1,0 +1,33 @@
+.generic-text {
+  .bullet-list {
+    margin: 0;
+    padding: 0;
+    li {
+      // line-height: 20px;
+      margin: 5px 0px;
+    }
+  }
+
+  .text-bold {
+    margin: 20px 0px;
+  }
+}
+
+.component-container {
+  &.non-fullscreen {
+    .generic-text {
+      .bullet-list {
+        @extend .component-container.non-fullscreen;
+        @include marginAuto();
+      }
+    }
+  }
+}
+
+.swiper-container {
+  .generic-text {
+    @extend .generic-text;
+
+
+  }
+}

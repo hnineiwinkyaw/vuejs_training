@@ -1,0 +1,195 @@
+@font-face {
+  font-family: 'Myanmar3';
+  src: url('../fonts/mm3_05-Jan-2011.eot');
+  src: url('../fonts/mm3_05-Jan-2011.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/mm3_05-Jan-2011.woff') format('woff'),
+    url('../fonts/mm3_05-Jan-2011.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  font-size: 16px;
+}
+*[v-cloak] {
+  display: none;
+}
+body {
+  font-family: 'Myanmar3', Arial;
+  // font-family: Roboto, "Helvetica Neue", Arial, "Droid Sans", sans-serif;
+  font-weight: normal;
+  color: $primary-color;
+  @include fontsizeRem($default-font-size);
+
+  @media (max-width: $screen-xs-max) {
+    @include fontsizeRem($default-font-size-xs);
+  }
+  
+  &.no-scroll {
+    overflow-y: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+a {
+  color: $theme-color;
+  text-decoration: none;
+  
+  &:hover, &:focus {
+    text-decoration: underline;
+    color: $theme-color;
+    cursor: pointer;
+  }
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  margin: 0px auto;
+  color: $theme-color;
+  // padding-top: $heading-top;
+  padding-bottom: $heading-bottom;
+
+  @media (max-width: $screen-xs-max) {
+    // padding-top: $heading-top-xs;
+    padding-bottom: $heading-bottom-xs;
+  }
+}
+
+// h2, h3, h4, h5, h6 {
+//   font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+// }
+
+h1 {
+  font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+  // line-height: 65px;
+  line-height: 1.09em;
+  color: $theme-color;
+  @include fontsizeRem($h1-font-size);
+  @media (max-width: $screen-xs-max) {
+    line-height: 36px;
+    @include fontsizeRem($h1-font-size-xs);
+  }
+}
+
+h2 {
+  font-size: $h2-font-size;
+  line-height: 1.07em;
+  @media (max-width: $screen-xs-max) {
+    font-size: $h2-font-size-xs;
+  }
+}
+
+h3 {
+  font-size: $h3-font-size;
+  line-height: 1.12em;
+  @media (max-width: $screen-xs-max) {
+    font-size: $h3-font-size-xs;
+  }
+}
+
+h4 {
+  font-size: $h4-font-size;
+  line-height: 1.12em;
+  @media (max-width: $screen-xs-max) {
+    font-size: $h4-font-size-xs;
+  }
+}
+
+h5 {
+  @include fontsizeRem($h5-font-size);
+  line-height: 1.22em;
+  @media (max-width: $screen-xs-max) {
+    @include fontsizeRem($h5-font-size-xs);
+  }
+}
+
+h6 {
+
+}
+
+p {
+  line-height: 1.33em;
+}
+
+label {
+
+}
+
+input {
+
+}
+
+ul {
+  li {
+
+  }
+}
+
+img {
+  @include marginAuto;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(42, 63, 84, 0.3);
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(42, 63, 84, 0.8);
+}
+
+.checkbox {
+  position: relative;
+  // width: 30px;
+
+  &::hover, &::focus {
+    outline: none;
+    border: 0px none;
+    box-shadow: none;
+  }
+}
+
+#product {
+  min-width: 160px;
+}
+
+#size {
+  min-width: 115px;
+}
+
+.main_container {
+  background: rgb(42, 63, 84);
+}
+
+.search-status, .search-button {
+  @media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
+    margin-top: 20px!important;
+  }
+}
+
+.invoice_status, .invoice_search-btn,  {
+  @media (min-width: $screen-xs-max) and (max-width: $screen-md-max) {
+    margin-top: 20px!important;
+  }
+}
+
+.panel_toolbox {
+  @media (max-width: $screen-xs-max) {
+    margin-bottom: 20px;
+  }
+}
+
+table.table {
+  span {
+    &.fa-plus, &.fa-minus {
+      cursor: pointer;
+    }
+  }  
+}

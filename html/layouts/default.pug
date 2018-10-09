@@ -1,0 +1,52 @@
+- var lang = 'en'
+block variables
+doctype html
+html
+  head
+    title= title
+    base(href=baseUrl)
+
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    meta(name="HandheldFriendly" content="True")
+    
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+    meta(http-equiv="Cache-Control" content="no-cache")
+    meta(http-equiv="Pragma" content="no-cache")
+    meta(http-equiv="Expires" content="-1")
+
+    meta(property="og:title" content="Co-Working")
+    meta(property="og:description" content="Co-Working")
+
+    meta(property="og:image" content="{ page image url to share }")
+
+    meta(name="summary" content="Co-Working")
+    meta(name="description" content="Co-Working")
+    meta(name="keywords" content="{ seo keywords }")
+    meta(name="robots" content="index")
+
+    meta(name='mobile-web-app-capable', content='yes')
+
+    //- link(rel='manifest', href='/manifest/manifest.json')
+
+    link(rel='icon', sizes='192x192', href='nice-highres.png')
+    link(rel='icon', sizes='128x128', href='niceicon.png')
+
+    link(rel='apple-touch-icon', sizes='128x128', href='niceicon.png')
+    link(rel='apple-touch-icon-precomposed', sizes='128x128', href='niceicon.png')
+    
+    //- link(href='./css/framework.css', type='text/css', rel='stylesheet')
+
+  body
+    include ../mixins/atoms
+    include ../mixins/molecules
+    include ../mixins/components
+    
+    block content
+
+    script.
+        //- var baseUrl = '/';
+        var baseUrl = '#{baseUrl}';
+    
+    //- script(src="./js/framework.bundle.js")
+    block content-script

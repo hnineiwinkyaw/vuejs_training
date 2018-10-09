@@ -1,0 +1,28 @@
+{
+  "projName": "viho-erp",
+  "destPath": "/dist",
+  "lang": "en",
+  "themes": [],
+  "path": {
+    "assetspath": ".",
+    "distpath": "./dist",
+    "jadepath": ".",
+    "manifestpath": "/manifest",
+    "jspath": "/js",
+    "csspath": "/css",
+    "copypath": "/",
+    "libspath": "./node_modules"
+  },
+  "server": {
+    "lrStarted": false,
+    "connection": {
+      "local": "localhost",
+      "external": null,
+      "port": null
+    }
+  },
+  "build": {
+    "isStage": false,
+    "isProd": false
+  }
+}

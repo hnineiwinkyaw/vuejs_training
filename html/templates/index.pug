@@ -1,0 +1,11 @@
+extends ../layouts/default
+block variables
+  - var title = "Zydus Incentive"
+block content
+  //- app shell
+  div.app-canvas Loading ..
+
+append content-script
+  script.
+    //- service worker here
+    location.href = './login';

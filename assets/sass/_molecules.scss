@@ -1,0 +1,20 @@
+@import 'molecules/generic-text';
+@import 'molecules/video-player';
+
+.number-list {
+  list-style-type: decimal;
+  margin: 0;
+  padding: 0px 15px;
+}
+
+.letter-list {
+  list-style-type: upper-alpha;
+  margin: 0;
+  padding: 0px 15px;
+}
+
+.social-share {
+  i {
+    color: $affair-color;
+  }
+}

@@ -1,0 +1,210 @@
+@mixin primaryColor($type:false) {
+  @if($type == false) {
+    color: $primary-color;
+  }
+  @else if($type == 'icon') {
+    // stroke: $primary-color;
+    stroke: none;
+  }
+  @else if($type == 'bg') {
+    background-color: $primary-background-color;
+  }
+}
+
+@mixin secondaryColor($type:false) {
+  @if($type == false) {
+    color: $secondary-color;
+  }
+  @else if($type == 'icon') {
+    // stroke: $secondary-color;
+    stroke: none;
+    fill: $secondary-color;
+  }
+  @else if($type == 'bg') {
+    background-color: $secondary-background-color;
+  }
+}
+
+@mixin themeColor($type:false) {
+  @if($type == false) {
+    color: $theme-color;
+  }
+  @else if($type == 'icon') {
+    // stroke: $secondary-color;
+    stroke: none;
+    fill: $theme-color;
+  }
+  @else if($type == 'bg') {
+    background-color: $theme-background-color;
+  }
+}
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+      $animations: #{$animations + nth($animate, $i)};
+
+      @if $i < $max {
+          $animations: #{$animations + ", "};
+      }
+  }
+  -webkit-animation: $animations;
+  -moz-animation:    $animations;
+  -o-animation:      $animations;
+  animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin marginAuto() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin headingColorGroup($color) {
+  h1, h2, h3, h4, h5, h6 {
+    color: $color;
+  }
+}
+
+@mixin headingGroup {
+  h1, h2, h3, h4, h5, h6 {
+    @content;
+  }
+}
+
+@mixin bspadding() {
+  padding-left:  ceil(($grid-gutter-width / 2));
+  padding-right: floor(($grid-gutter-width / 2));
+}
+
+@mixin fontsizeRem($fontsizePx) {
+  @if $fontsizePx == 11px {
+    font-size: 0.6875rem;
+  }
+  @else if $fontsizePx == 12px {
+    font-size: 0.75rem;
+  }
+  @else if $fontsizePx == 13px {
+    font-size: 0.8125rem;
+  }
+  @else if $fontsizePx == 14px {
+    font-size: 0.875rem;
+  }
+  @else if $fontsizePx == 15px {
+    font-size: 0.9375rem;
+  }
+  @else if $fontsizePx == 18px {
+    font-size: 1.125rem;
+  }
+  @else if $fontsizePx == 20px {
+    font-size: 1.25rem;
+  }
+  @else if $fontsizePx == 35px {
+    font-size: 2.1875rem;
+  }
+  @else {
+    font-size: $fontsizePx;
+  }
+}
+
+@mixin opacity($opacity: 0.5) {
+  filter: alpha(opacity=($opacity * 100));
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
+  -moz-opacity: $opacity;
+  -khtml-opacity: $opacity;
+  opacity: $opacity;
+}
+
+@mixin bgopacity($color, $opacity: 1, $important: '') {
+  @if $color {
+    background-color: $color #{$important};
+    background-color: rgba(red($color), green($color), blue($color), $opacity) #{$important};
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+@mixin borderRadius($radius: 5px) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transform($val) {
+  -webkit-transform: $val;
+  -moz-transform: $val;
+  -ms-transform: $val;
+  transform: $val;
+}
+
+@mixin collapse {
+  .collapsing {
+      // transition: height 1s ease-in-out, opacity 400ms ease-in-out;
+    &.collapsing-expand {
+      transition:
+        height    0.5s 0.0s,
+        opacity   1s 0.0s;
+    }
+
+    &.collapsing-collapse {
+      opacity: 0;
+      height: 0px;
+      transition:
+        opacity   0.5s 0.0s,
+        height    1s 0.0s;
+    }
+  }
+
+  .collapse {
+    opacity: 0;
+    height: 0px;
+    // transition: height 1s linear, opacity 400ms ease-in-out;
+    overflow: hidden;
+
+    &.in {
+      opacity: 1;
+      height: auto;
+      // transition: height 1s linear, opacity 400ms ease-in-out;
+    }
+  }
+}
+
+@mixin bulletListIcon() {
+  // margin: 0;
+  padding: 0;
+  text-align: left;
+  li {
+    position: relative;
+    list-style: none;
+    line-height: 25px;
+    svg {
+      top: 5px;
+      position: absolute;
+    }
+    span {
+      margin-left: 20px;
+      display: inline-block;
+    }
+  }
+}

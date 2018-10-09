@@ -1,0 +1,55 @@
+.carousel {
+  position: relative;
+  @media (max-width: $screen-xs-max) {
+    margin-bottom: 30px;
+  }
+
+  .swiper-slide {
+    // opacity: 0;
+
+    &.swiper-slide-active {
+      opacity: 1;
+      transition: opacity 1s;
+    }
+  }
+
+  .swiper-pagination {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+
+    .swiper-pagination-bullet {
+      margin: 1px;
+      background-color: $theme-color;
+      opacity: 0.4;
+
+      &.swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+    }
+  }
+  .swiper-prev, .swiper-next {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    @include bgopacity($secondary-color, 0.75);
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    .fa {
+      align-self: center;
+    }
+  }
+
+  .swiper-prev {
+    left: 0;
+  }
+
+  .swiper-next {
+    right: 0;
+  }
+}
