@@ -1,1 +1,3 @@
-npm install --global --production windows-build-tools
+yarn add gulp
+npm install
+yarn gulp
